@@ -1,0 +1,567 @@
+Algoritmo Guia_2punto2
+	
+	///ej guia 2.2 1
+	Definir a Como Entero
+	Escribir "digite una nota valida entre 1 y 10: "
+	leer a
+	mientras a<0 o a>10 Hacer
+		Escribir "ingrese una nota valida: "
+		leer a
+	FinMientras
+	
+	Escribir "la nota es correcta"
+
+	///ej guia 2.2 2
+	Definir a, b, c, suma como entero
+	Escribir "ingrese un valor positivo limite: "
+	leer a
+	suma = 0
+	Mientras a> suma Hacer
+		Escribir "ingrese numeros hasta superar el limite: "
+		leer b
+		leer c
+		suma = b+c
+	FinMientras
+	Escribir "la suma supero el valor inicial."
+	
+	///ej guia 2.2 3
+	
+	Definir a,rep,total Como real
+	a=0
+	total=0
+	rep=0
+	mientras a <> -1 Hacer
+		si a<> -1 Entonces
+			Escribir "ingese un num:"
+			leer a
+			total= total+a
+			rep= rep+1
+		FinSi
+	FinMientras
+	Escribir "el promedio es: " (total+1)/(rep-1)
+	
+	///ej guia 2.2 4
+	Definir rep Como Entero
+	Definir a,contra Como Cadena
+	rep=0
+	contra= "eureka"
+	
+	Hacer
+		Escribir "escriba la contraseña: "
+		leer a
+		rep= rep+1
+	Mientras que a <> contra y rep <3
+	si a = contra Entonces
+		Escribir "Felicitaciones, ingreso al sistema correctamente."
+	sino
+		Escribir "Se supero el maximo de intentos."
+	FinSi
+	
+	///ej guia 2.2 5
+	
+	Definir ent, ent1, rep, mayor, menor,suma  Como real
+	rep=0
+	mayor=0
+	menor=0
+	suma=0
+	Hacer
+		Escribir "digite un numero entero, presione 0 para obtener el resultado: "
+		leer ent
+		si rep = 0 Entonces
+			mayor=ent
+			menor=ent
+		FinSi
+		si ent > mayor Entonces
+			mayor=ent
+		SiNo
+			si ent < menor y ent <>0 Entonces
+				menor=ent
+			FinSi
+		FinSi
+		rep=rep+1
+		suma= ent+suma
+	Mientras Que ent <>0
+	Escribir "El num mayor es: " mayor
+	Escribir "El num menor es: " menor
+	Escribir "El promedio de los num es: " suma/(rep-1)
+	
+	///ej guia 2.2 6
+	
+	Definir i como real
+	para i <- 1 Hasta 9 Con Paso 1 Hacer
+		Escribir "El cuadrado de " i, " es " i^2
+	FinPara
+	
+	///ej guia 2.2 7
+	
+	definir frase,cad como cadena
+	definir num,i Como Entero
+	
+	Escribir "digite una frase o palabra y se mostrara separada por espacios:"
+	leer frase
+	num<- Longitud(frase)
+	i<-0
+	para i <- 0 Hasta num con paso 1 Hacer
+		cad = Subcadena(frase,i,i)
+		Escribir cad 
+		
+	FinPara
+	
+	///ej guia 2.2 8
+	
+	definir alum,i,tp,expo,parcial,prom,contalum, porcalumapr,mayor,contalum4y7,contrep,promrep,notarepprom Como real
+	contalum=0
+	mayor=0
+	contalum4y7=0
+	contrep=0
+	promrep=0
+	Escribir Sin Saltar "Digite la cantidad de alumnos que posee el profesor:"
+	leer alum
+	
+	
+	para i<-1 Hasta alum con paso 1 Hasta 
+		Escribir "Notas del alumno nº:" i
+		Escribir Sin Saltar "Digite la nota del Tp:"
+		leer tp
+		mientras tp>10 o tp<0 Hacer
+			Escribir "la nota ingresada no es valida, por favor vuelva a intentarlo:"
+			leer tp
+		FinMientras
+		Escribir Sin Saltar "Digite la nota de la exposicion:"
+		leer expo
+		mientras expo>10 o expo<0 Hacer
+			Escribir "la nota ingresada no es valida, por favor vuelva a intentarlo:"
+			leer expo
+		FinMientras
+		Escribir Sin Saltar "Digite la nota del parcial:"
+		leer parcial
+		mientras parcial>10 o parcial<0 Hacer
+			Escribir "la nota ingresada no es valida, por favor vuelva a intentarlo:"
+			leer parcial
+		FinMientras
+		
+		prom= (tp*0.35)+(expo*0.25)+(parcial*0.40)
+		
+		Escribir "La nota promedio es: " prom
+		si prom < 6.5 Entonces
+			Escribir "El alumno esta Reprobado"
+			contrep=contrep+1
+			promrep=promrep+prom
+		SiNo
+			Escribir "El alumno esta Aprobado"
+		FinSi
+		si tp >= 7.5 Entonces
+			contalum=contalum+1
+		FinSi
+		
+		si expo > mayor Entonces
+			mayor=expo
+		FinSi
+		si parcial >= 4 y parcial <= 7.5 Entonces
+			contalum4y7=contalum4y7+1
+		FinSi
+	FinPara
+	notarepprom<-promrep/contrep
+	porcalumapr<- (contalum*100)/alum
+	Escribir "La nota promedio de los alumnos reprobados es: " notarepprom
+	Escribir "La cantidad de alumnos aprobados con una nota mayor a 7.5 es del " porcalumapr "%"
+	Escribir "La nota mas alta en las exposiciones fue: " mayor
+	Escribir "La cantidad de alumnos con promedio entre 4 y 7.5 es de: " contalum4y7
+	
+	///ej guia 2.2 9
+	
+	Definir i,j,k,l,lado Como Real
+	Definir b como cadena
+	
+	Escribir "digite una medida para el cuadrado"
+	leer lado
+	
+	para i<-1 hasta lado con paso 1 Hacer
+		si i=1 o i=lado Entonces
+			Para j<-1 Hasta lado Con Paso 1 Hacer
+				Escribir Sin Saltar "*"
+			Fin Para
+			Escribir " "
+		SiNo
+			para k<-1 Hasta lado con paso lado-1 Hacer
+				Escribir sin saltar "*"
+				para l<-1 hasta lado-2 con paso 1 Hacer
+					Escribir Sin Saltar " "
+				FinPara
+			FinPara
+			Escribir " "
+		FinSi
+	FinPara
+	// otra forma mas facil seria:
+	
+	definir i,j,num Como Entero
+	Escribir "ingrese un num:"
+	leer num
+	
+	Para i<-1 Hasta num Hacer
+		para j<-1 Hasta num Hacer
+			si i > 1 y i < num y j>1 y j<num Entonces
+				Escribir Sin Saltar " "
+			SiNo
+				Escribir Sin Saltar "*"
+			FinSi
+			
+		FinPara
+		Escribir ""
+	FinPara
+	
+	///ej guia 2.2 10
+	
+	Definir emp,sueld,nvent,preciovent,i,j,k,preciovent1,l,com como real
+	Escribir "ingrese la cantidad de empleados que posee la empresa: "
+	leer emp
+	com=0
+	preciovent1=0
+	para i<-1 Hasta emp Con Paso 1 Hacer
+		Escribir "Empleado nº: " i
+		Escribir Sin Saltar "Ingrese el sueldo base del empleado: $"
+		leer sueld
+		Escribir Sin Saltar "ingrese el numero de ventas que realizo el empleado: "
+		leer nvent
+		para j<-1 Hasta nvent Con Paso 1 Hacer
+			Escribir Sin Saltar "Ingrese el monto de las ventas: $"
+			leer preciovent
+			preciovent1=preciovent1+preciovent
+		FinPara
+		com<- preciovent1*0.1
+		Escribir "Para el vendedor nº " i " se debera abonar: $" com " por comisiones."
+		Escribir "El total a abonar teniendo en cuenta el sueldo base + comision es de: $" com+sueld
+	FinPara
+	
+	///ej extra guia 2.2 1
+	
+	Definir a Como Entero
+	Escribir "Digite un numero:"
+	leer a
+	mientras a > 10 Hacer
+		Escribir "Digite un numero:"
+		leer a
+	FinMientras
+	
+	///ej extra guia 2.2 2
+	
+	definir max,min,num,cont como entero
+	cont=0
+	Escribir Sin Saltar "Ingrese un numero para establecer el minimo: "
+	leer min
+	Escribir Sin Saltar "Ingrese un numero para establecer el maximo: "
+	leer max
+	num=min
+	mientras num >= min y num <= max Hacer
+		Escribir "Ingrese numeros situados entre el numero maximo y el minimo:"
+		leer num
+		cont=cont+1
+	FinMientras
+	Escribir "la cantidad de numeros digitados fue de: " cont-1
+	
+	///ej extra guia 2.2 3
+	
+	definir min,num como real
+	
+	Escribir Sin Saltar "Ingrese un numero para establecer el minimo: "
+	leer min
+	num=min
+	
+	mientras num >= min  Hacer
+		Escribir "Ingrese numeros mayores que el minimo:"
+		leer num
+	FinMientras
+	Escribir "El num es menor, el programa finaliza."
+	
+	///ej extra guia 2.2 4
+	
+	definir nom como cadena
+	definir teor,prac,prob,notfin como real
+	
+	nom<-"Raul"
+	
+	mientras nom <> "" Hacer
+		Escribir Sin Saltar "Ingrese el nombre del alumno: "
+		leer nom
+		si nom <> "" Entonces
+			Escribir Sin Saltar "ingrese la nota practica: "
+			leer prac
+			mientras prac>10 o prac<0 Hacer
+				Escribir "la nota ingresada no es valida, por favor vuelva a intentarlo:"
+				leer prac
+			FinMientras
+			Escribir Sin Saltar "ingrese la nota de los problemas: "
+			leer prob
+			mientras prob>10 o prob<0 Hacer
+				Escribir "la nota ingresada no es valida, por favor vuelva a intentarlo:"
+				leer prob
+			FinMientras
+			Escribir Sin Saltar "ingrese la nota teorica: "
+			leer teor
+			mientras teor>10 o teor<0 Hacer
+				Escribir "la nota ingresada no es valida, por favor vuelva a intentarlo:"
+				leer teor
+			FinMientras
+			notfin= (prac*0.1)+(prob*0.5)+(teor*0.4)
+			Escribir "La nota promedio final de " nom " alumno es: " notfin
+		FinSi
+	FinMientras
+	
+	///ej extr guia 2.2 5
+	
+	Definir num,cont,div,digit como real
+	Escribir Sin Saltar "Digite un numero entero positivo: "
+	leer num
+	cont=0
+	si num >= 1 Entonces
+		Mientras num <> 0 Hacer
+			num <- trunc(num/10)
+			cont<-cont+1
+		FinMientras
+	FinSi
+	digit<- num+cont
+	Escribir "La cantidad de digitos que posee el numero es: " digit
+	
+	///ej extr guia 2.2 6
+	
+	definir contra, usuario Como Entero
+	Hacer
+		Escribir "Ingrese el usuario y la contraseña asi podra salir del programa: "
+		Escribir Sin Saltar "Usuario: "
+		leer usuario
+		Escribir Sin Saltar "Contraseña: "
+		leer contra
+	Mientras Que usuario <> 1024 y contra <> 4567 
+	Escribir "El usuario y la contraseña son correctos, hasta la proxima!!"
+	
+	///ej extr guia 2.2 7
+	
+	definir num,suma Como Entero
+	Definir sn Como Cadena
+	suma=0
+	Hacer
+		Escribir "Ingrese un numero entero: "
+		leer num
+		Escribir "Desea ingresar otro numero: si/no "
+		leer sn
+		suma=suma + num
+	Mientras Que sn="si"
+	Escribir "La suma de los numeros es: " suma
+	
+	///ej extr guia 2.2 8
+	
+	definir cont,num,par,impar,contpar,contimpar,mediapar,mediaimpar Como Real
+	cont=0
+	par=0
+	impar=0
+	contpar=0
+	contimpar=0
+	Hacer
+		Escribir "Ingrese un numero: "
+		leer num
+		si num MOD 2 = 0
+			par=par+num
+			contpar=contpar+1
+			si par=0 Entonces
+				par=par +1
+			FinSi
+		SiNo
+			impar=impar+num
+			contimpar=contimpar+1
+			si impar=0 Entonces
+				impar=impar+1
+			FinSi
+		FinSi
+		cont=cont+1
+	Mientras Que cont < 10
+	mediapar=par/contpar
+	mediaimpar=impar/contimpar
+	Escribir "La media de los numeros pares es: " mediapar
+	Escribir "La media de los numeros impares es: " mediaimpar
+	
+	///ej extr guia 2.2 9
+	
+	definir num,i,sumapar,cont,numpar Como Entero
+	sumapar=0
+	cont=0
+	Hacer
+		Escribir "Ingrese un numero: "
+		leer num
+		para i<-1 hasta num Hacer
+			numpar=i*2
+			Escribir numpar
+			cont=cont+1
+			sumapar=numpar+sumapar
+			
+		FinPara
+	Hasta Que cont=num
+	Escribir "la suma es:" sumapar
+	
+	///ej extr guia 2.2 10
+	
+	Definir num,numalea Como Entero
+	numalea= Aleatorio(1,10)
+	Escribir numalea
+	Hacer
+		Escribir "intente adivinar el numero: "
+		leer num
+		si num <> numalea Entonces
+			si num > numalea Entonces
+				Escribir "El numero es menor!!"
+			SiNo
+				Escribir "El numero es mayor!!"
+			FinSi
+		FinSi
+	Mientras Que num<>numalea
+	Escribir "Felicidades el numero ingresado es correcto!!!"
+	
+	///ej extr guia 2.2 11
+	
+	Definir i,multpar,multimpar Como Entero
+	definir opc Como Caracter
+	multpar=0
+	multimpar=0
+	Escribir "Ingrese si desea saber los multiplos de 2 o 3:"
+	leer opc
+	si opc = "3" Entonces
+		para i<-1 Hasta 33 Con Paso 1 Hacer
+			multimpar=i*3
+			Escribir "Multiplo impar: " multimpar
+		FinPara
+	SiNo
+		si opc ="2" Entonces
+			para i<-1 Hasta 50 Con Paso 1 Hacer
+				multpar=i*2
+				Escribir "Multiplo par: " multpar
+			FinPara
+		SiNo
+			Escribir "Ingrese una opcion valida."
+		FinSi
+	FinSi
+	
+	///ej extr guia 2.2 12
+	
+	definir i,num,suma Como Entero
+	suma=0
+	Escribir "ingrese un numero y se mostrara la suma de todos los enteros:"
+	leer num
+	para i<-1 Hasta num Con Paso 1 hacer
+		suma=i+suma
+	FinPara
+	Escribir "La suma de los numeros comprendidos es: " suma
+	
+	///ej extr guia 2.2 13
+	
+	definir frase,cad como cadena
+	definir num,i Como Entero
+	Escribir "digite una frase o palabra y se mostrara separada por espacios y al revez:"
+	leer frase
+	num<- Longitud(frase)
+	i<-0
+	para i <- (-num+1) Hasta 0 con paso 1 Hacer
+		cad = Subcadena(frase,-i,-i)
+		Escribir cad 
+	FinPara
+	
+	///ej extr guia 2.2 14
+	
+	definir num,i,j como entero
+	Escribir "Ingrese un numero y se mostrara la altura con asteriscos: "
+	leer num
+	para i<-num Hasta 1 Con Paso -1 Hacer
+		para j<-1 Hasta i Con Paso 1 Hacer
+			Escribir Sin Saltar "*"
+		FinPara
+		Escribir ""
+	FinPara
+	
+	///ej extr guia 2.2 15
+	
+	definir num,i,j,fact como entero
+	Escribir "Ingrese un numero y se mostraran los factoriales y su resultado: "
+	leer num
+	j=1
+	fact=1
+	para i<-1 Hasta num Con Paso 1 Hacer
+		Mientras j<=num Hacer
+			j=j+1
+		FinMientras
+	FinPara
+	//FALTA TERMINAR FACTORIALES
+	
+	///EJERCICIO COOPERATIVO GUIA 2.2
+	
+	definir contra, usuario,opc,sn como cadena
+	Definir repcontra,bot,saldo,i,numalea,saldototal,saldo1,saldototal1 Como real
+	Definir login Como Logico
+	login=Falso
+	repcontra=0
+	saldototal=0
+	saldo1=0
+	saldototal=0
+	mientras repcontra <3 y login=Falso Hacer
+		Escribir Sin Saltar "Ingrese el usuario: "
+		leer usuario
+		si usuario = "Albus_D" Entonces
+			Escribir Sin Saltar "Ingrese la contraseña: "
+			leer contra
+			si contra= "CaramelosDeLimon" Entonces
+				login=0<1
+				Escribir "El inicio de sesion es valido, por lo tanto es: " login
+				si login = Verdadero Entonces
+					Repetir
+						Escribir "Seleccione que desea realizar: A-Ingresar Botellas; B-Consultar saldo; C-Salir."
+						leer opc
+						opc=Mayusculas(opc)
+						segun opc Hacer
+							"A":
+								Escribir "Digite el numero de botellas que desea ingresar: "
+								leer bot
+								saldo1=0
+								para i<-1 Hasta bot Hacer
+									saldo=0
+									numalea=Aleatorio(100,3000)
+									si numalea <500 Entonces
+										Escribir "la botella pesa: " numalea " gr. y le corresponden $50 por la botella " i
+										saldo=saldo+50
+									SiNo
+										si numalea >= 501 y numalea<= 1500
+											Escribir "la botella pesa: " numalea " gr. y le corresponden $125 por la botella " i
+											saldo=saldo+125
+										SiNo
+											si numalea >= 1501 Entonces
+												Escribir "la botella pesa: " numalea " gr. y le corresponden $200 por la botella " i
+												saldo=saldo+200
+											FinSi
+										FinSi
+									FinSi
+									saldo1=saldo+saldo1
+								FinPara
+								Escribir "El total a cobrar por las " bot " botellas ingresadas es de: $" saldo1
+								Escribir "Si esta de acuerdo con el monto ofrecido escriba aceptar, sino rechazar: "
+								leer sn
+								si sn= "aceptar" Entonces
+									saldototal=saldototal+saldo1
+									Escribir "Se depositaron $" saldo1 " a su saldo."
+								SiNo
+									si sn="rechazar"
+										Escribir "Devolviendo material."
+									SiNo
+										Escribir "Opcion incorrecta, no cobrara el monto dicho."
+									FinSi
+								FinSi
+							"B":
+								Escribir "El saldo actual es de: $" saldototal
+							"C":
+								Escribir "Gracias por utilizar el programa, vuelva pronto!!"
+							De Otro Modo:
+								Escribir "Ingrese una opcion correcta: "
+								leer opc
+						FinSegun
+					Mientras Que opc <> "C"
+				FinSi
+			FinSi
+		FinSi
+		repcontra=repcontra+1
+	FinMientras
+FinAlgoritmo

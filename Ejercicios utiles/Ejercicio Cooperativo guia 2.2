@@ -1,0 +1,75 @@
+Algoritmo EjcoopRepasoGuia2
+	definir contra, usuario,opc,sn como cadena
+	Definir repcontra,bot,saldo,i,numalea,saldototal,saldo1,saldototal1 Como real
+	Definir login Como Logico
+	login=Falso
+	repcontra=0
+	saldototal=0
+	saldo1=0
+	saldototal=0
+	mientras repcontra <3 y login=Falso Hacer
+		Escribir Sin Saltar "Ingrese el usuario: "
+		leer usuario
+		si usuario = "Albus_D" Entonces
+			Escribir Sin Saltar "Ingrese la contraseña: "
+			leer contra
+			si contra= "CaramelosDeLimon" Entonces
+				login=0<1
+				Escribir "El inicio de sesion es valido, por lo tanto es: " login
+				si login = Verdadero Entonces
+					Repetir
+						Escribir "Seleccione que desea realizar: A-Ingresar Botellas; B-Consultar saldo; C-Salir."
+						leer opc
+						opc=Mayusculas(opc)
+						segun opc Hacer
+							"A":
+								Escribir "Digite el numero de botellas que desea ingresar: "
+								leer bot
+								saldo1=0
+								para i<-1 Hasta bot Hacer
+									saldo=0
+									numalea=Aleatorio(100,3000)
+									si numalea <500 Entonces
+										Escribir "la botella pesa: " numalea " gr. y le corresponden $50 por la botella " i
+										saldo=saldo+50
+									SiNo
+										si numalea >= 501 y numalea<= 1500
+											Escribir "la botella pesa: " numalea " gr. y le corresponden $125 por la botella " i
+											saldo=saldo+125
+										SiNo
+											si numalea >= 1501 Entonces
+												Escribir "la botella pesa: " numalea " gr. y le corresponden $200 por la botella " i
+												saldo=saldo+200
+											FinSi
+										FinSi
+									FinSi
+									saldo1=saldo+saldo1
+								FinPara
+								Escribir "El total a cobrar por las " bot " botellas ingresadas es de: $" saldo1
+								Escribir "Si esta de acuerdo con el monto ofrecido escriba aceptar, sino rechazar: "
+								leer sn
+								si sn= "aceptar" Entonces
+									saldototal=saldototal+saldo1
+									Escribir "Se depositaron $" saldo1 " a su saldo."
+								SiNo
+									si sn="rechazar"
+										Escribir "Devolviendo material."
+									SiNo
+										Escribir "Opcion incorrecta, no cobrara el monto dicho."
+									FinSi
+								FinSi
+							"B":
+								Escribir "El saldo actual es de: $" saldototal
+							"C":
+								Escribir "Gracias por utilizar el programa, vuelva pronto!!"
+							De Otro Modo:
+								Escribir "Ingrese una opcion correcta: "
+								leer opc
+						FinSegun
+					Mientras Que opc <> "C"
+				FinSi
+			FinSi
+		FinSi
+		repcontra=repcontra+1
+	FinMientras
+FinAlgoritmo
