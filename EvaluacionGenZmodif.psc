@@ -1,5 +1,5 @@
 SubProceso vergenz(mat,n,n)
-	Definir i,j,conta,contb,contc,contd,conta1,contb1,contc1,contd1 Como Entero
+	Definir i,j,conta,contb,contc,contd,conta1,contb1,contc1,contd1,cont3 Como Entero
 	conta=0
 	contb=0
 	contc=0
@@ -8,6 +8,7 @@ SubProceso vergenz(mat,n,n)
 	contb1=0
 	contc1=0
 	contd1=0
+	cont3=0
 	para i<-0 Hasta n-1 Hacer
 		para j<-0 Hasta n-1 Hacer
 			si i=j Entonces
